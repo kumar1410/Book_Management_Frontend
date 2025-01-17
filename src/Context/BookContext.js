@@ -38,10 +38,13 @@ const BookProvider = ({ children }) => {
   const fetchBooks = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/books", {
-        method: "GET",
-        headers: createAuthHeaders(),
-      });
+      const response = await fetch(
+        "https://book-management-backend-three.vercel.app/api/books",
+        {
+          method: "GET",
+          headers: createAuthHeaders(),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch books");
       }
@@ -57,11 +60,14 @@ const BookProvider = ({ children }) => {
   const addBook = async (book) => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5000/api/add/books", {
-        method: "POST",
-        headers: createAuthHeaders(),
-        body: JSON.stringify(book),
-      });
+      const response = await fetch(
+        "https://book-management-backend-three.vercel.app/api/add/books",
+        {
+          method: "POST",
+          headers: createAuthHeaders(),
+          body: JSON.stringify(book),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to add book");
