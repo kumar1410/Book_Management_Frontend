@@ -18,7 +18,7 @@ const BookProvider = ({ children }) => {
     if (token) {
       fetchBooks();
     } else {
-      setBooks([]); // Clear books if the token is missing
+      setBooks([]);
     }
   }, []);
 
