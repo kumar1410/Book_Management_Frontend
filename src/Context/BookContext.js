@@ -27,13 +27,13 @@ const BookProvider = ({ children }) => {
     setError(null);
   };
 
-   const createAuthHeaders = () => {
-     const token = getAuthToken();
-     return {
-       "Content-Type": "application/json",
-       Authorization: `Bearer ${token}`,
-     };
-   };
+  const createAuthHeaders = () => {
+    const token = getAuthToken();
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    };
+  };
 
   const fetchBooks = async () => {
     setLoading(true);
